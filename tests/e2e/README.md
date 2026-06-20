@@ -22,4 +22,3 @@ Start the dev server first, then run the tests:
 cd tests/e2e
 uv run pytest -v
 ```
-
