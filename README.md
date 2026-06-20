@@ -52,6 +52,21 @@ database request the `empty_db` fixture.
 E2E tests live in `tests/e2e/` as a separate project — see
 `tests/e2e/README.md`.
 
+## Configuration
+
+### `BARCODE_CODE_LENGTH`
+
+Tuple of `(min, max)` controlling the accepted barcode code length
+in the UI. Affects the search input `maxlength` attribute and the
+URL pattern for item lookup. Defaults to `(4, 6)` when not set.
+
+```python
+BARCODE_CODE_LENGTH = (4, 8)
+```
+
+Codes outside this range are not routed — the user gets a 404. The
+data model (`Barcode.code`, `max_length=10`) is a separate constraint.
+
 ## Server
 
 ```shell
