@@ -20,6 +20,9 @@ dev = [
     "pytest~=8.3",
     "pytest-django~=4.9",
 ]
+prod = [
+    "gunicorn~=23.0",
+]
 
 [tool.uv.extra-build-dependencies]
 asgiref = ["setuptools"]
@@ -35,6 +38,7 @@ pluggy = ["setuptools"]
 pygments = ["hatchling"]
 pytest = ["setuptools"]
 pytest-django = ["setuptools"]
+gunicorn = ["setuptools"]
 requests = ["setuptools"]
 sqlparse = ["hatchling"]
 urllib3 = ["hatchling", "hatch-vcs"]
