@@ -64,8 +64,18 @@ URL pattern for item lookup. Defaults to `(4, 6)` when not set.
 BARCODE_CODE_LENGTH = (4, 8)
 ```
 
-Codes outside this range are not routed — the user gets a 404. The
-data model (`Barcode.code`, `max_length=10`) is a separate constraint.
+The container image reads it from the environment instead, as a
+comma separated pair:
+
+```
+BARCODE_CODE_LENGTH=1,10
+```
+
+The data model (`Barcode.code`, `max_length=10`) is a separate
+constraint, and nothing validates a code against this range on the
+way in. A stored code outside the range has no URL: looking it up
+directly gives a 404, and rendering any page that links to the item
+raises `NoReverseMatch`. Keep the range spanning the codes in use.
 
 ## Server
 
