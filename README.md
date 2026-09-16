@@ -73,9 +73,10 @@ BARCODE_CODE_LENGTH=1,10
 
 The data model (`Barcode.code`, `max_length=10`) is a separate
 constraint, and nothing validates a code against this range on the
-way in. A stored code outside the range has no URL: looking it up
-directly gives a 404, and rendering any page that links to the item
-raises `NoReverseMatch`. Keep the range spanning the codes in use.
+way in. A stored code outside the range has no URL, so looking it up
+directly gives a 404 and the item is linked by its id instead
+(ADR-0008). Keep the range spanning the codes in use, so that items
+are reachable by the code printed on them.
 
 ## Server
 
