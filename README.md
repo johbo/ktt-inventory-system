@@ -84,7 +84,8 @@ cover the codes you use.
 apt install nginx uwsgi uwsgi-plugin-python3
 ```
 
-/etc/uwsgi/apps-enabled/ktt-inventar.ini
+`/etc/uwsgi/apps-enabled/ktt-inventar.ini`:
+
 ```ini
 [uwsgi]
 plugin          = python3
@@ -109,7 +110,8 @@ processes       = 2
 #chmod-socket = 664
 ```
 
-/etc/nginx/sites-enabled/ktt-inventory
+`/etc/nginx/sites-enabled/ktt-inventory`:
+
 ```
 server {
         listen 82 default_server;
