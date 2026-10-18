@@ -88,8 +88,8 @@ apt install nginx uwsgi uwsgi-plugin-python3
 ```ini
 [uwsgi]
 plugin          = python3
-virtualenv      = /var/www/ktt-inventory-system/venv
-pythonpath      = /var/www/ktt-inventory-system/venv
+virtualenv      = /var/www/ktt-inventory-system/.venv
+pythonpath      = /var/www/ktt-inventory-system/.venv
 
 chdir           = /var/www/ktt-inventory-system
 wsgi-file       = /var/www/ktt-inventory-system/inventory-wsgi.py
