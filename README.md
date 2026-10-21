@@ -103,6 +103,16 @@ cover the codes you use.
 apt install nginx uwsgi uwsgi-plugin-python3
 ```
 
+Set `STATIC_ROOT` in `inventar/settings.py` — the template leaves it
+empty — and collect the static files. This also gathers the admin's
+CSS and JavaScript, which live in the virtualenv rather than the
+checkout, so nginx has to serve `STATIC_ROOT` and not
+`inventory/static`:
+
+```shell
+uv run python manage.py collectstatic --noinput
+```
+
 `/etc/uwsgi/apps-enabled/ktt-inventar.ini`:
 
 ```ini
@@ -142,7 +152,8 @@ server {
         # static files are not passed to uwsgi
         location /media {
         }
-        location /static {
+        location /static/ {
+                alias /var/www/ktt-inventory-system/static/;
         }
         location /other {
         }
