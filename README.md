@@ -21,6 +21,14 @@ Set `DATABASES['default']['NAME']`, `SECRET_KEY`, and
 `AUTHENTICATION_BACKENDS` — the template comments out every backend,
 so logging in fails until one is listed.
 
+Compile the German catalogue, or the interface stays English:
+
+```shell
+uv run python manage.py compilemessages -i .venv
+```
+
+Needs `msgfmt` from `gettext`.
+
 ### NixOS
 
 On NixOS, pip-installed Python C extensions (like greenlet) cannot
