@@ -12,9 +12,9 @@ off, and that the error templates render.
 
 ## Considered Options
 
-2. Add the routes behind a setting, off by default.
-3. Add the routes, open to everyone.
-4. Add the routes, and require staff for the 500 one.
+1. Add the routes behind a setting, off by default.
+2. Add the routes, open to everyone.
+3. Add the routes, and require staff for the 500 one.
 
 ## Decision Outcome
 
